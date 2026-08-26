@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Studio | Profesyonel Saç Tasarım</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Fontlar temizlendi, sadece Inter ve Playfair kaldı -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <a href="#" class="logo">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/>
+                </svg>
+                <div class="logo-text">
+                    <span class="logo-title">ELITE STUDIO</span>
+                    <span class="logo-subtitle">SAÇ TASARIM ve GÜZELLİK</span>
+                </div>
+            </a>
+            <nav class="main-nav">
+                <a href="#hero">Ana Sayfa</a>
+                <a href="#hizmetler">Hizmetlerimiz</a>
+                <a href="#randevu" class="btn btn-primary nav-btn">Randevu Al</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Tarzınızı<br>profesyonellere<br>bırakın.</h1>
+                    <p class="hero-description">Modern kesimler, son moda renkler ve kişiye özel dokunuşlarla saçlarınıza yeniden hayat veriyoruz.</p>
+                    <div class="hero-actions">
+                        <a href="#randevu" class="btn btn-primary">Randevu Talebi Oluştur</a>
+                        <a href="#hizmetler" class="btn btn-secondary">Hizmetleri İncele</a>
+                    </div>
+                </div>
+                <div class="hero-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1000&q=80" alt="Elite Studio Salon" class="hero-image">
+                </div>
+            </div>
+        </section>
+
+        <section id="hizmetler" class="showcase-section">
+            <div class="section-header">
+                <h2 class="section-title">Hizmetlerimiz ve Fiyatlar</h2>
+                <div class="title-divider"></div>
+            </div>
+            
+            <div class="carousel-wrapper">
+                <button type="button" class="carousel-nav-btn prev-btn" aria-label="Önceki">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+                
+                <div class="carousel-viewport">
+                    <div class="carousel-track services-track">
+                        <div class="carousel-slide service-card">
+                            <h3>Saç Kesimi ve Yıkama</h3>
+                            <p>Yüz hatlarınıza en uygun, modern ve trend kesim teknikleri ile yepyeni bir imaj.</p>
+                            <div class="service-price"><strong>450 TL</strong> / ortalama</div>
+                        </div>
+                        <div class="carousel-slide service-card">
+                            <h3>Saç Boyama (Dip/Tüm)</h3>
+                            <p>Kaliteli organik boyalar ile saçı yıpratmadan, canlı ve parlak renk geçişleri.</p>
+                            <div class="service-price"><strong>1.200 TL</strong> 'den başlayan</div>
+                        </div>
+                        <div class="carousel-slide service-card">
+                            <h3>Keratin Bakımı</h3>
+                            <p>Yıpranmış saçları onaran, elektriklenmeyi önleyen pürüzsüzlük terapisi.</p>
+                            <div class="service-price"><strong>1.500 TL</strong> / seans</div>
+                        </div>
+                        <div class="carousel-slide service-card">
+                            <h3>Röfle ve Ombre</h3>
+                            <p>Saçlarınıza doğal ışıltılar ve boyut katan profesyonel renklendirme işlemleri.</p>
+                            <div class="service-price"><strong>2.000 TL</strong> 'den başlayan</div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" class="carousel-nav-btn next-btn" aria-label="Sonraki">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+            </div>
+        </section>
+
+        <section id="randevu" class="booking-section">
+            <div class="booking-container form-left-layout">
+                
+                <div class="booking-form-wrapper">
+                    <h2 class="form-title">Online Randevu</h2>
+                    
+                    <form id="appointment-form" novalidate>
+                        <div class="form-group-row">
+                            <div class="form-group">
+                                <label for="form-name">Adınız Soyadınız</label>
+                                <input type="text" id="form-name" required>
+                                <span class="field-error">Lütfen adınızı ve soyadınızı girin.</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-phone">Telefon Numaranız</label>
+                                <input type="tel" id="form-phone" value="+90 " required>
+                                <span class="field-error">Lütfen geçerli bir telefon numarası girin.</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group-row">
+                            <div class="form-group">
+                                <label for="form-service">Almak İstediğiniz Hizmet</label>
+                                <select id="form-service" required>
+                                    <option value="" selected>Seçiniz...</option>
+                                    <option value="Saç Kesimi ve Yıkama">Saç Kesimi ve Yıkama</option>
+                                    <option value="Saç Boyama (Dip/Tüm)">Saç Boyama (Dip/Tüm)</option>
+                                    <option value="Keratin Bakımı">Keratin Bakımı</option>
+                                    <option value="Röfle ve Ombre">Röfle ve Ombre</option>
+                                </select>
+                                <span class="field-error">Lütfen bir hizmet seçin.</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-expert">Uzman Seçimi</label>
+                                <select id="form-expert" required>
+                                    <option value="" selected>Kiminle çalışmak istersiniz?</option>
+                                    <option value="Cemil Bey">Cemil Bey</option>
+                                    <option value="Ayşe Hanım">Ayşe Hanım</option>
+                                </select>
+                                <span class="field-error">Lütfen bir uzman seçin.</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group-row">
+                            <div class="form-group">
+                                <label for="form-date">Randevu Tarihi</label>
+                                <input type="text" id="form-date" required autocomplete="off" readonly placeholder="Sistem hazırlanıyor..." disabled>
+                                <span class="field-error">Lütfen bir tarih seçin.</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-time">Randevu Saati</label>
+                                <select id="form-time" required disabled>
+                                    <option value="" selected>Sistem hazırlanıyor...</option>
+                                </select>
+                                <span class="field-error">Lütfen bir saat seçin.</span>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block submit-btn">Randevuyu Onayla</button>
+                    </form>
+                    
+                    <div id="form-success" class="form-success-container">
+                        <div class="success-icon-wrapper"><svg class="success-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                        <h3>Randevunuz Onaylandı</h3>
+                        <p>Bizi tercih ettiğiniz için teşekkür ederiz. Belirttiğiniz saatte sizi salonumuzda bekliyor olacağız.</p>
+                        <button type="button" id="btn-reset-form" class="btn btn-secondary btn-sm">Yeni Randevu Al</button>
+                    </div>
+                </div>
+
+                <div class="contact-info-wrapper">
+                    <div class="contact-details">
+                        <h3 class="contact-title">İletişim ve Adres</h3>
+                        
+                        <!-- Emojiler Şık SVG İkonlarla Değiştirildi -->
+                        <div class="detail-item">
+                            <div class="detail-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            </div>
+                            <div class="detail-content">
+                                <span class="detail-label">Telefon</span>
+                                <span class="detail-text">+90 (216) xxx x xx</span>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <div class="detail-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            </div>
+                            <div class="detail-content">
+                                <span class="detail-label">Çalışma Saatleri</span>
+                                <span class="detail-text">Salı – Cumartesi: 09:00 – 19:30</span>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <div class="detail-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            </div>
+                            <div class="detail-content">
+                                <span class="detail-label">Adres</span>
+                                <span class="detail-text">Moda Caddesi No:123, Kadıköy / İstanbul</span>
+                            </div>
+                        </div>
+
+                        <div class="map-card">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.655459344449!2d29.028220376569116!3d40.9875470713448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab7a38fe4187f%3A0x6ec0c54178593a2!2zS2FkxLFrw7Z5!5e0!3m2!1sen!2str!4v1710000000000!5m2!1sen!2str" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Ultra Kompakt Yeni Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-row">
+                
+                <!-- 1. Logo ve Açıklama -->
+                <div class="footer-brand">
+                    <h3 class="footer-logo">ELITE STUDIO</h3>
+                    <p class="footer-desc">Kişiye özel saç tasarımı ve güzellik çözümleri.</p>
+                </div>
+                
+                <!-- 2. Hızlı Linkler (Yatay) -->
+                <div class="footer-nav">
+                    <a href="#hero">Ana Sayfa</a>
+                    <a href="#hizmetler">Hizmetlerimiz</a>
+                    <a href="#randevu">Online Randevu</a>
+                </div>
+                
+                <!-- 3. Sosyal Medya İkonları -->
+                <div class="footer-social">
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                </div>
+                
+                <!-- 4. Telif Hakkı -->
+                <div class="footer-copy">
+                    © 2026 Elite Studio.<br>Tüm hakları saklıdır.
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/tr.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
