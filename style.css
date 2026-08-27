@@ -31,7 +31,7 @@
 /* --- Base & Reset --- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; font-size: 16px; }
-body { background-color: var(--color-bg-primary); color: var(--color-text-primary); font-family: var(--font-sans); line-height: 1.6; }
+body { background-color: var(--color-bg-primary); color: var(--color-text-primary); font-family: var(--font-sans); line-height: 1.6; overflow-x: hidden; }
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; height: auto; display: block; }
 button, input, select, textarea { font-family: inherit; font-size: inherit; color: inherit; background: none; border: none; }
@@ -225,24 +225,8 @@ span.flatpickr-weekday { color: #8e8e93 !important; font-weight: 600 !important;
 .flatpickr-calendar.ilk-acilis .flatpickr-day.today { background: #ff3b30 !important; border-color: #ff3b30 !important; color: #fff !important; font-weight: bold; }
 .flatpickr-day.selected, .flatpickr-day.selected:hover { background: #ff3b30 !important; border-color: #ff3b30 !important; color: #fff !important; font-weight: bold; }
 
-/* Mobilde takvimin kenara yaslanmasını çözen ekleme */
+/* Mobil */
 @media (max-width: 768px) {
-    /* TAKVİM ORTALAMA VE EKRANDAN TAŞMA FİXİ */
-    .flatpickr-calendar {
-        position: fixed !important;
-        top: 50% !important;
-        left: 50% !important;
-        right: auto !important;
-        bottom: auto !important;
-        margin: 0 !important;
-        transform: translate(-50%, -50%) !important;
-        width: 315px !important; 
-        z-index: 99999 !important;
-    }
-    
-    .flatpickr-innerContainer, .flatpickr-rContainer, .dayContainer, .flatpickr-days {
-        width: 100% !important;
-        min-width: 100% !important;
-        max-width: 100% !important;
-    }
+    .prev-btn { left: 5px; }
+    .next-btn { right: 5px; }
 }
