@@ -227,13 +227,17 @@ span.flatpickr-weekday { color: #8e8e93 !important; font-weight: 600 !important;
 
 /* Mobilde takvimin kenara yaslanmasını çözen ekleme */
 @media (max-width: 768px) {
-    /* TAKVİM ORTALAMA VE PADDING YAMASI */
+    /* TAKVİM ORTALAMA VE EKRANDAN TAŞMA FİXİ */
     .flatpickr-calendar {
-        left: 0 !important;
-        right: 0 !important;
-        margin: 0 auto !important;
-        transform: none !important;
+        position: fixed !important;
+        top: 50% !important;
+        left: 50% !important;
+        right: auto !important;
+        bottom: auto !important;
+        margin: 0 !important;
+        transform: translate(-50%, -50%) !important;
         width: 315px !important; 
+        z-index: 99999 !important;
     }
     
     .flatpickr-innerContainer, .flatpickr-rContainer, .dayContainer, .flatpickr-days {
