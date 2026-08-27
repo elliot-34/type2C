@@ -98,7 +98,8 @@ function initFlatpickr(inputElement) {
     flatpickr(inputElement, {
         locale: "tr", 
         minDate: "today", 
-        dateFormat: "Y-m-d",  
+        dateFormat: "Y-m-d", 
+        disableMobile: "true", 
         monthSelectorType: "static", 
         onReady: function(selectedDates, dateStr, instance) {
             if (selectedDates.length === 0) instance.calendarContainer.classList.add('ilk-acilis');
