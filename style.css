@@ -1,3 +1,7 @@
+/* ==========================================================================
+   Elite Studio - Premium Stylesheet (Tam Sürüm - Mobil Uyumlu)
+   ========================================================================== */
+
 :root {
     --color-bg-primary: #FCFAF8;      
     --color-bg-secondary: #F5F0EB;    
@@ -24,6 +28,7 @@
     --border-radius: 8px;             
 }
 
+/* --- Base & Reset --- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; font-size: 16px; }
 body { background-color: var(--color-bg-primary); color: var(--color-text-primary); font-family: var(--font-sans); line-height: 1.6; }
@@ -40,9 +45,9 @@ button, input, select, textarea { font-family: inherit; font-size: inherit; colo
 .btn-block { width: 100%; display: flex; }
 .btn-sm { padding: 0.6rem 1.5rem; font-size: 0.85rem; }
 
-/* --- Header --- */
+/* --- Header & Hamburger Menü --- */
 .site-header { background-color: var(--color-bg-card); border-bottom: 1px solid var(--color-border); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
-.header-container { max-width: var(--max-width); margin: 0 auto; padding: 1rem 1.5rem; display: flex; align-items: center; justify-content: space-between; }
+.header-container { max-width: var(--max-width); margin: 0 auto; padding: 1rem 1.5rem; display: flex; align-items: center; justify-content: space-between; position: relative; z-index: 101; background: var(--color-bg-card); }
 .logo { display: flex; align-items: center; gap: 0.75rem; }
 .logo-icon { width: 32px; height: 32px; color: var(--color-accent); }
 .logo-text { display: flex; flex-direction: column; }
@@ -52,6 +57,13 @@ button, input, select, textarea { font-family: inherit; font-size: inherit; colo
 .main-nav a:not(.btn) { font-size: 0.95rem; font-weight: 500; color: var(--color-text-secondary); transition: color var(--transition-fast); }
 .main-nav a:not(.btn):hover { color: var(--color-accent); }
 .nav-btn { padding: 0.6rem 1.5rem; }
+
+.hamburger-btn { display: none; background: none; border: none; cursor: pointer; color: var(--color-text-primary); padding: 0.5rem; }
+.hamburger-btn svg { width: 28px; height: 28px; }
+.mobile-nav-panel { display: none; flex-direction: column; background-color: var(--color-bg-card); border-top: 1px solid var(--color-border); padding: 1rem 1.5rem; gap: 0.5rem; position: absolute; top: 100%; left: 0; width: 100%; box-shadow: 0 10px 20px rgba(0,0,0,0.08); z-index: 99; }
+.mobile-nav-panel.is-active { display: flex; }
+.mobile-link { font-weight: 500; font-size: 1.05rem; padding: 0.75rem 0; color: var(--color-text-primary); border-bottom: 1px solid var(--color-bg-secondary); }
+.mobile-link:last-child { border-bottom: none; }
 
 /* --- Hero --- */
 .hero-section { padding: 4rem 1.5rem; background-color: var(--color-bg-primary); }
@@ -70,7 +82,6 @@ button, input, select, textarea { font-family: inherit; font-size: inherit; colo
 .carousel-wrapper { max-width: var(--max-width); margin: 0 auto; display: flex; align-items: center; gap: 1.5rem; position: relative; }
 .carousel-viewport { flex-grow: 1; overflow: hidden; padding: 1rem 0; }
 .services-track { display: flex; gap: 2rem; transition: transform var(--transition-smooth); will-change: transform; }
-
 .service-card { flex: 0 0 calc(33.333% - 1.34rem); background-color: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--border-radius); padding: 3rem 2rem; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.03); transition: transform 0.3s, box-shadow 0.3s; }
 .service-card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(163, 126, 88, 0.15); border-color: var(--color-accent); }
 .service-card h3 { font-family: var(--font-sans); font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: var(--color-text-primary); }
@@ -81,14 +92,14 @@ button, input, select, textarea { font-family: inherit; font-size: inherit; colo
 .carousel-nav-btn:hover { background-color: var(--color-accent); color: #fff; border-color: var(--color-accent); }
 .carousel-nav-btn svg { width: 20px; height: 20px; }
 
-/* --- Randevu & İletişim (Esneme Sorunu Çözüldü) --- */
+/* --- Randevu & İletişim (Senin Kusursuz Grid Kodun) --- */
 .booking-section { padding: 5rem 1.5rem; background-color: var(--color-bg-primary); }
 
 /* align-items: stretch; form ve harita kutularını dıştan eşitler */
 .form-left-layout { display: grid; grid-template-columns: 1.6fr 1fr; gap: 4rem; max-width: var(--max-width); margin: 0 auto; align-items: stretch; }
 
-/* İçerik sündürülmesi iptal edildi. flex-direction normal bırakıldı */
-.booking-form-wrapper { background-color: var(--color-bg-card); border: 1px solid var(--color-border); padding: 3rem; border-radius: var(--border-radius); position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
+/* İçerik sündürülmesi iptal edildi. flex-direction normal (block) bırakıldı, sadece dış eşitlik için height:100% var */
+.booking-form-wrapper { height: 100%; background-color: var(--color-bg-card); border: 1px solid var(--color-border); padding: 3rem; border-radius: var(--border-radius); position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
 #appointment-form { display: block; }
 .form-title { font-family: var(--font-sans); font-size: 1.8rem; font-weight: 700; margin-bottom: 2rem; border-bottom: 2px solid var(--color-bg-secondary); padding-bottom: 1rem; }
 
@@ -128,77 +139,69 @@ button, input, select, textarea { font-family: inherit; font-size: inherit; colo
 .map-card { flex-grow: 1; border-radius: 6px; overflow: hidden; margin-top: auto; min-height: 200px; display: block; border: 1px solid rgba(255,255,255,0.1); }
 .map-card iframe { width: 100%; height: 100%; display: block; border: none; }
 
-
-/* ==========================================================================
-   YENİ ULTRA KOMPAKT FOOTER (Ortalanmış ve Toparlanmış Düzen)
-   ========================================================================== */
+/* --- Footer (Kompakt ve Ortalanmış Flex Düzeni) --- */
 .site-footer { background-color: var(--color-text-primary); color: #fff; padding: 2rem 1.5rem; }
 .footer-container { max-width: var(--max-width); margin: 0 auto; }
-
-/* Esneme kilidi kaldırıldı, justify-content: center ile tüm elemanlar ortaya çekildi */
 .footer-row { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 4rem; }
-
-/* Flex 1 fırlatması kaldırıldı */
 .footer-brand { flex: 0 0 auto; text-align: left; }
 .footer-logo { font-family: var(--font-serif); font-weight: 700; font-size: 1.4rem; letter-spacing: 0.05em; margin-bottom: 0.3rem; }
 .footer-desc { color: var(--color-border-dark); font-size: 0.85rem; line-height: 1.4; max-width: 250px; margin: 0; }
-
 .footer-nav { display: flex; gap: 1.5rem; align-items: center; }
 .footer-nav a { color: var(--color-border-dark); font-size: 0.95rem; font-weight: 500; transition: color var(--transition-fast); }
 .footer-nav a:hover { color: #fff; }
-
 .footer-social { display: flex; gap: 0.75rem; align-items: center; margin: 0; }
 .social-btn { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; background-color: rgba(255,255,255,0.08); color: #fff; transition: all var(--transition-fast); }
 .social-btn:hover { background-color: var(--color-accent); transform: translateY(-2px); }
 .social-btn svg { width: 18px; height: 18px; }
-
 .footer-copy { font-size: 0.85rem; color: var(--color-border-dark); text-align: left; line-height: 1.5; }
 
-/* Responsive Düzenlemeler */
+/* ==========================================================================
+   RESPONSIVE (Mobil Düzeltmeleri)
+   ========================================================================== */
 @media (max-width: 992px) {
     .hero-container { grid-template-columns: 1fr; text-align: center; gap: 2.5rem; }
     .hero-actions { justify-content: center; }
     .hero-title { font-size: 3.5rem; }
     .form-left-layout { grid-template-columns: 1fr; }
     .service-card { flex: 0 0 calc(50% - 1rem); }
-}
-@media (max-width: 768px) {
-    .header-container { flex-direction: column; gap: 1rem; }
-    .hero-title { font-size: 2.8rem; }
-    .hero-actions { flex-direction: column; gap: 1rem; }
-    .hero-actions .btn { width: 100%; }
-    .service-card { flex: 0 0 100%; } 
-    .form-group-row { grid-template-columns: 1fr; gap: 0; }
-    .carousel-nav-btn { display: none; } 
-    .map-card { height: 260px; margin-top: 1.5rem; }
-    
-    /* Mobilde Footer alt alta dizilsin */
-    .footer-row { flex-direction: column; text-align: center; gap: 1.5rem; }
-    .footer-brand { text-align: center; }
-    .footer-copy { text-align: center; }
 }
 
-/* Responsive Düzenlemeler */
-@media (max-width: 992px) {
-    .hero-container { grid-template-columns: 1fr; text-align: center; gap: 2.5rem; }
-    .hero-actions { justify-content: center; }
-    .hero-title { font-size: 3.5rem; }
-    .form-left-layout { grid-template-columns: 1fr; }
-    .service-card { flex: 0 0 calc(50% - 1rem); }
-}
 @media (max-width: 768px) {
-    .header-container { flex-direction: column; gap: 1rem; }
-    .hero-title { font-size: 2.8rem; }
+    /* Header & Hamburger */
+    .desktop-only { display: none !important; }
+    .hamburger-btn { display: flex; }
+    .header-container { padding: 0.75rem 1.25rem; }
+
+    /* Hero / Karşılama Ekranı (Boşluklar azaltıldı, Resim yukarı çekildi) */
+    .hero-section { padding: 2rem 1.5rem; }
+    .hero-container { grid-template-columns: 1fr; gap: 1.5rem; text-align: center; } 
+    .hero-title { font-size: 2.8rem; margin-bottom: 1rem; }
+    .hero-description { font-size: 1.05rem; margin-bottom: 1.5rem; margin-left: auto; margin-right: auto; }
     .hero-actions { flex-direction: column; gap: 1rem; }
     .hero-actions .btn { width: 100%; }
+    .hero-image { height: 320px; } 
+
+    /* Kartlar & Form */
     .service-card { flex: 0 0 100%; } 
     .form-group-row { grid-template-columns: 1fr; gap: 0; }
     .carousel-nav-btn { display: none; } 
-    .map-card { height: 260px; margin-top: 1.5rem; }
     
-    /* Mobilde Footer alt alta dizilsin */
+    /* Mobil Form & Harita */
+    .form-left-layout { grid-template-columns: 1fr; gap: 3rem; }
+    .contact-info-wrapper, .contact-details { height: auto; }
+    .map-card { min-height: 260px; height: 260px; flex-grow: 0; margin-top: 1.5rem; }
+    
+    /* Mobil Footer */
     .footer-row { flex-direction: column; text-align: center; gap: 1.5rem; }
-    .footer-copy { text-align: center; }
+    .footer-brand, .footer-copy { text-align: center; }
+
+    /* TAKVİM ORTALAMA YAMASI (Mobilde kenara yapışmasını engeller) */
+    .flatpickr-calendar {
+        left: 50% !important;
+        right: auto !important;
+        transform: translateX(-50%) !important;
+        width: 90vw !important; 
+    }
 }
 
 /* ==========================================================================
@@ -218,3 +221,13 @@ span.flatpickr-weekday { color: #8e8e93 !important; font-weight: 600 !important;
 .flatpickr-day.today { background: transparent !important; border-color: transparent !important; font-weight: normal; }
 .flatpickr-calendar.ilk-acilis .flatpickr-day.today { background: #ff3b30 !important; border-color: #ff3b30 !important; color: #fff !important; font-weight: bold; }
 .flatpickr-day.selected, .flatpickr-day.selected:hover { background: #ff3b30 !important; border-color: #ff3b30 !important; color: #fff !important; font-weight: bold; }
+
+/* Mobilde takvimin kenara yaslanmasını çözen ekleme */
+@media (max-width: 768px) {
+    .flatpickr-calendar {
+        left: 50% !important;
+        right: auto !important;
+        transform: translateX(-50%) !important;
+        width: 90vw !important; 
+    }
+}

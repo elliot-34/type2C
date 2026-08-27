@@ -4,6 +4,24 @@ const TUM_SAATLER = ["09:00", "10:00", "11:00", "13:00", "14:00", "15:00", "16:0
 let mevcutRandevular = [];
 
 document.addEventListener('DOMContentLoaded', async () => {
+    
+    // --- YENİ: MOBİL HAMBURGER MENÜ MANTIĞI ---
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    if (mobileBtn && mobileMenu) {
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('is-active');
+        });
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('is-active');
+            });
+        });
+    }
+    // ------------------------------------------
+
     initServicesCarousel(); 
     initPhoneMask();
     await API_Baglantisini_Kur();
@@ -148,7 +166,7 @@ function saatleriFiltrele(secilenTarih) {
         return satirSaati;
     });
 
-    saatSelect.innerHTML = '<option value="" disabled selected>Saat seçiniz...</option>';
+    saatSelect.innerHTML = '<option value="" selected>Saat seçiniz...</option>';
     saatSelect.disabled = false;
 
     let bosSaatVar = false;
@@ -187,7 +205,6 @@ function initAppointmentForm() {
 
     if (!form || !successContainer || !resetBtn) return;
 
-    // Hataları sadece ilgili kutunun altında gösteren sisteme dönüldü
     const showError = (inputElement) => { const group = inputElement.closest('.form-group'); if (group) group.classList.add('is-invalid'); };
     const clearError = (inputElement) => { const group = inputElement.closest('.form-group'); if (group) group.classList.remove('is-invalid'); };
     const isValidPhone = (phone) => { const digits = phone.replace(/\D/g, ''); return digits.length === 12 && digits.startsWith('90'); };
@@ -269,6 +286,15 @@ function initAppointmentForm() {
     resetBtn.addEventListener('click', () => {
         successContainer.classList.remove('is-active');
         document.getElementById('form-time').innerHTML = '<option value="" disabled selected>Önce tarih ve uzman seçiniz</option>';
+        
+        // TAKVİM SIFIRLANIRKEN TETİKLENEN SAHTE HATALARI (KIRMIZILIKLARI) TEMİZLE
+        document.querySelectorAll('.form-group.is-invalid').forEach(group => {
+            group.classList.remove('is-invalid');
+        });
+        
+        // Varsa toplu hata mesajı div'ini de gizle
+        const feedbackDiv = document.getElementById('validation-feedback');
+        if (feedbackDiv) feedbackDiv.style.display = 'none';
     });
 }
 

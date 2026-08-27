@@ -7,7 +7,6 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Fontlar temizlendi, sadece Inter ve Playfair kaldı -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     
@@ -26,11 +25,29 @@
                     <span class="logo-subtitle">SAÇ TASARIM ve GÜZELLİK</span>
                 </div>
             </a>
-            <nav class="main-nav">
+            
+            <!-- Masaüstü Menü -->
+            <nav class="main-nav desktop-only">
                 <a href="#hero">Ana Sayfa</a>
                 <a href="#hizmetler">Hizmetlerimiz</a>
                 <a href="#randevu" class="btn btn-primary nav-btn">Randevu Al</a>
             </nav>
+
+            <!-- Mobil Hamburger Butonu -->
+            <button id="mobile-menu-btn" class="hamburger-btn" aria-label="Menü">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobil Açılır Menü Paneli -->
+        <div id="mobile-menu" class="mobile-nav-panel">
+            <a href="#hero" class="mobile-link">Ana Sayfa</a>
+            <a href="#hizmetler" class="mobile-link">Hizmetlerimiz</a>
+            <a href="#randevu" class="btn btn-primary btn-block mobile-link text-center" style="border:none;">Randevu Al</a>
         </div>
     </header>
 
@@ -145,7 +162,7 @@
                             <div class="form-group">
                                 <label for="form-time">Randevu Saati</label>
                                 <select id="form-time" required disabled>
-                                    <option value="" selected>Sistem hazırlanıyor...</option>
+                                    <option value="" disabled selected>Sistem hazırlanıyor...</option>
                                 </select>
                                 <span class="field-error">Lütfen bir saat seçin.</span>
                             </div>
@@ -166,14 +183,13 @@
                     <div class="contact-details">
                         <h3 class="contact-title">İletişim ve Adres</h3>
                         
-                        <!-- Emojiler Şık SVG İkonlarla Değiştirildi -->
                         <div class="detail-item">
                             <div class="detail-icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                             </div>
                             <div class="detail-content">
                                 <span class="detail-label">Telefon</span>
-                                <span class="detail-text">+90 (216) xxx x xx</span>
+                                <span class="detail-text">+90 (216) 555 12 34</span>
                             </div>
                         </div>
                         
@@ -207,25 +223,21 @@
         </section>
     </main>
 
-    <!-- Ultra Kompakt Yeni Footer -->
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-row">
                 
-                <!-- 1. Logo ve Açıklama -->
                 <div class="footer-brand">
                     <h3 class="footer-logo">ELITE STUDIO</h3>
                     <p class="footer-desc">Kişiye özel saç tasarımı ve güzellik çözümleri.</p>
                 </div>
                 
-                <!-- 2. Hızlı Linkler (Yatay) -->
                 <div class="footer-nav">
                     <a href="#hero">Ana Sayfa</a>
                     <a href="#hizmetler">Hizmetlerimiz</a>
                     <a href="#randevu">Online Randevu</a>
                 </div>
                 
-                <!-- 3. Sosyal Medya İkonları -->
                 <div class="footer-social">
                     <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
@@ -235,7 +247,6 @@
                     </a>
                 </div>
                 
-                <!-- 4. Telif Hakkı -->
                 <div class="footer-copy">
                     © 2026 Elite Studio.<br>Tüm hakları saklıdır.
                 </div>
