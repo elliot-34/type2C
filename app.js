@@ -1,4 +1,4 @@
-const API_URL = "https://type2-proxy.serviceapi.workers.dev/?hedef=kuafor";
+const API_URL = "https://type2-proxy.serviceapi.workers.dev/?hedef=type2c";
 const TUM_SAATLER = ["09:00", "10:00", "11:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00"];
 
 let mevcutRandevular = [];
